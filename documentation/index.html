@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title></title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+		pre,code { font-family:"Consolas", Courier New, Courier, monospace; padding:15px; background:#f7f7f7; margin:0px 0px 18px; border:1px solid #e5e5e5; line-height:18px; color:#000 }
+code { padding:0px 3px; background-image:none; background:#f5f5f5; border:none }
+pre { white-space:pre-wrap; white-space:-moz-pre-wrap; white-space:-pre-wrap; white-space:-o-pre-wrap; word-wrap:break-word }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	  <h3 class="center alt"> Documentation by &ldquo;Ansonika&rdquo; v2.1</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;COUNTRYHOLIDAYS - HTML Site template&rdquo;</h1>
+		
+		<div class="borderTop">
+		  <div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 15 JUNE 2015<br>
+                   Last update: 8 August 2022<br>
+					By: Ansonika</strong>
+			  </p>
+		  </div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my theme.  If you are happy with the theme, please <strong>TAKE A MOMENT TO RATE IT</strong> from your DOWNLOADS PAGE.
+Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+
+		
+	  <h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML Structure</a></li>
+			<li><a href="#cssFiles">CSS Files, Structure and basic modifications</a></li>
+<li><a href="#php">PHP contact form, newsltetter form and plan a visit form</a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#credits">Sources and Credit</a></li>
+            <li><a href="#updates">Updates</a></li>
+		</ol>
+        
+      <hr>
+     
+        
+  <h3 id="htmlStructure"><strong>A) HTML Structure</strong> - <a href="#toc">top</a></h3>
+	  <p> This theme has a fixed centered layout 1170px. It's based on Boostrap framework grid. It's ULTRA RESPONSIVE!!. It comes with a fullwidth and a boxed version.
+	  </p>
+<hr>
+
+		<h3 id="cssFiles"><strong>B) CSS Files Structure and basic modfication</strong> - <a href="#toc">top</a>	  </h3>
+	  <p>The css files are inside the css folder (minified versions included) .To modify colors, typografy, button style ecc....find the realtive comment line in style.css. Below how the file is organized:</p>
+<p>1. SITE STRUCTURE and TYPOGRAPHY<br>
+  - 1.1 Typography<br>
+  - 1.2 Buttons<br>
+  - 1.3 Structure</p>
+<p>2. CONTENT<br>
+  - 2.1 Home<br>
+  - 2.1 Rooms list<br>
+  - 2.2 Room details<br>
+  - 2.3 About us<br>
+  - 2.4 Activities<br>
+  - 2.5 Contacts us<br>
+  - 2.6 Fullscreen gallery<br>
+  - 2.7 Error page</p>
+<p>3. COMMON<br>
+  - Tooltips<br>
+  - Containers styles<br>
+  - Form styles<br>
+  - Tabs, collapse<br>
+  - etc</p>
+
+     <p><strong>Change the address of Google map in contact page</strong>: open mapmarker_func.js and change with your latitude and longitude + your full address to center the map. You can change also your map marker (that has to be png24); you can use also the psd provided in the psd folder.</p>
+ <pre>//set up markers <br>		var myMarkers = {&quot;markers&quot;: [<br>				{&quot;latitude&quot;: &quot;51.511732&quot;, &quot;longitude&quot;:&quot;-0.123270&quot;, &quot;icon&quot;: &quot;img/map-marker2.png&quot;}<br>			]<br>		};<br>		<br>		//set up map options<br>		$(&quot;#map&quot;).mapmarker({<br>			zoom	: 14,<br>			center	: 'Covent Garden London', //YOUR FULL ADDRESS <br>			markers	: myMarkers<br>		});</pre>
+ <strong>COMMON ISSUE ON GOOGLE MAP</strong> (if the Google map works locally but does not works once the site will be online)<br>
+  <pre>In some cases Google requires an api key for the Google map.
+<br>You can create your own "Standard api key" here <br>by clicking on &quot;GET KEY&quot; BUTTON (on Authentication for the standard API—API keys section), <br>and follow the steps.
+<a href="https://developers.google.com/maps/documentation/javascript/get-api-key#key" target="_blank">https://developers.google.com/maps/documentation/javascript/get-api-key#key</a>
+
+Here some additionale info on how to create an API KEY <a href="http://thegrue.org/google-map-javascript-api-key/">http://thegrue.org/google-map-javascript-api-key/</a><br><br>Then replace at the bottom of every page that use Google map, this line<br>
+&lt;script src=&quot;http://maps.googleapis.com/maps/api/js&quot;&gt;&lt;/script&gt; OR 
+&lt;script type="text/javascript" src="<a target="_blank" href="http://maps.googleapis.com/maps/api/js?sensor=false">http://maps.googleapis.com/maps/api/js?sensor=false</a>"&gt;&lt;/script&gt;<br><br>with your api key included, like the example below<br>&lt;script src="<a target="_blank" href="http://maps.googleapis.com/maps/api/js?key=AIzaSyAaO0WhIut5GCNr9y8xTA36EPj87NEHptM">http://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY</a>"&gt;&lt;/script&gt;
+
+NOTE that if you apply the api key, the map does not load on your local computer, you should upload your site.</pre>
+<p><strong>Home with video header (fallback with a background image in tablets and mobile)</strong><br>
+ </p>
+<pre>1)Save you mp4 and ogv video in the video folder.The name of the files must match the datasource tag:<br>
+Example<br>data-teaser-source=&quot;video/paris&quot; (folder/name_files)=<br>paris.mp4<br>paris.ogv<br><br>2) To change the fallback background image open style.css an find this class<br><br>.header-video {<br>  position: relative;<br>  overflow: hidden;<br>  background: #4d536d url(../img/slide_hero.jpg) no-repeat center center;<br>  background-size: cover;<br>}<br>
+3) Optionally you can set a video play button for youtube/vimeo that works only in tablet and mobile by<br>changing the link in the html<br>&lt;a  href=&quot;https://www.youtube.com/watch?v=Zz5cu72Gv5Y&quot; class=&quot;video animated fadeInUp button_intro outline&quot;&gt;<br>Play video&lt;/a&gt;. NOTE THIS BUTTON IS VISIBLE ONLY ON TABLETS AND MOBILES.</pre>
+  <strong>Add more slides to the fullscreen gallery</strong>: at the bottom of the page that you wont to add more slides you have to edit these lines
+<pre>jQuery(function($){<br>$.supersized({<br>		slides :  	[      // Slideshow Images<br>		{image : 'images/slider/1.jpg'},<br>		{image : 'images/slider/3.jpg'},<br>		{image : 'images/slider/4.jpg'},<br>		{image : 'images/slider/5.jpg'},<br>		{image : 'images/slider/6.jpg'} // Last has no comma<br>		]				<br>});<br>});
+
+With autoplay: read more here <a href="http://support.ansonika.com/knowledgebase/113/">http://support.ansonika.com/knowledgebase/113/</a></pre>
+
+      <strong>Change wheater location</strong><br> 
+    You simply provide your US zip code, WOEID, lat/long, or any location in the script at the bottom of the page:
+      <pre>  $.simpleWeather({<br>    location: 'Marseille, France',<br>    woeid: '',<br>    unit: 'c',<br>   	
+		......
+<br>  });<br>});
+
+NOTE: for more details please refer to the full documentation (<a href="http://simpleweatherjs.com/">http://simpleweatherjs.com/</a>). 
+Some towns are not supported by the scripts1: <br>1) try using antoher method: Go to <a href="http://woeid.rosselliot.co.nz/">http://woeid.rosselliot.co.nz/</a> and type your location or one near as much <br>is possible, copy the id that the result give. Here an example http://codepen.io/fleeting/pen/skbqf  <br>2) Look for a city/town near as much as possible.     </pre>
+    
+
+<p><strong>Set up  site launch page located in site_launch folder</strong><br>
+  Open functions.js and find this line of code:</p>
+<pre><strong>SET THE DATE</strong><br>Open site_launch/js/functions.js and find this line.<br><br>var target = new Date(&quot;July 15 2014 13:30:00 GMT+0100&quot;); //replace with YOUR DATE
+
+<strong>SET NEWSLETTER EMAIL</strong><br>Open site_launch/assets/newsletter.php and find this commented code.<br><br>//$address = &quot;your email address&quot;;<br>$address = &quot;test@domain.com&quot;;<br></pre>
+<p><strong>THE GRID</strong><br> 
+      Please refer to this <a href="http://getbootstrap.com/">documentation Boostrap</a></p>
+    
+      <hr>
+<br>
+      <h3 id="php"><strong>C) PHP files: Contact form, Check availability form, Newsletter, Leave a review, Newsletter in site launch</strong> - <a href="#php">top</a></h3>
+      <p>All the files you need are located in assets folder(for the site launch is site_launch/assets). If you need to change the allert messages open assets/validate.js. Below an example taken from newsletter.php; all the files are well commented<strong>.<br>
+      </strong><br>
+        <img src="assets/images/mail.png" alt="" width="552" height="143" style="border:1px solid #ccc;">      </p>
+      </p>
+      <p><strong>Check availability form and contact form<br>
+        </strong>It's the same logic and script of check newsletter. If you doesn't recieve the email please first check:<br>
+      1) Your spam folder<br>
+      2) If you hosting requires special settings<br>
+      3) If your email  has to be managed from the same hosting provider<br>
+      4) Set the permission of the asset folder on your host to 755 your FTP client
+      </p>
+      </p>
+      <p><strong>If your host requires SMTP authentication</strong> use the php scritps versions located in the asset folder (of course change the file name in the html pages or rename them); follow the comments on code to apply your smtp settings. Autoreply is not supported.</strong>
+      <hr>
+<h3 id="javascript"><strong>D) JavaScript</strong> - <a href="#toc">top</a></h3>
+		
+	  <p>This theme use These Javascript (minified versions included). i've included the common theme scripts in a single file for a fast edit and load.</p>
+      <p><strong>common_scripts.js content:
+      </strong>
+      <ul>
+      <li>Boostrap.js</li>
+      <li>Magnifc-popup.js</li>
+      <li>Wow.js</li>
+      </ul>
+      </p>
+      <p><strong>Below a full list of js used.</strong></p>
+	  <p><img src="assets/images/js.jpg" width="284" height="514" style=" border: 1px solid #ccc"></p>
+	  <hr>
+		
+		<h3 id="credits"><strong>E) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+	  <p>I've used the following images, icons or other files as listed.
+		
+	  <ul>
+        <li><a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a></li>
+        <li><a href="http://fontello.com/">Fontello</a></li>
+        <li><a href="http://gsgd.co.uk/sandbox/jquery/easing/">Jquery easing</a></li>
+        <li><a href="http://nicinabox.com/superslides/">Background images slider</a></li>
+        <li><a href="https://github.com/eternicode/bootstrap-datepicker/">Bootstrap datepicker</a></li>
+        <li><a href="http://simpleweatherjs.com/">Weather widget</a></li>
+        <li><a href="http://dimsemenov.com/plugins/magnific-popup/">Magnific popup</a></li>
+        <li><a href="http://mynameismatthieu.com/WOW">Wow</a></li>
+        <li><a href="http://daneden.github.io/animate.css/">Animate.css</a></li>
+        <li><a href="http://github.com/leonsmith/retina-replace-js">Retina replace</a></li>
+        <li><a href="http://bqworks.com/slider-pro/">Slider pro in Room details page</a></li>
+         <li><a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/">Jquery validate</a></li>
+         <li><a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/">Moderniz</a></li>
+        <li><a href="http://jquery.com/">Jquery</a></li>
+	  </ul>
+		<p>Images are not included. You can buy them on Photodune.</p>
+	 
+     <hr>
+     <h3 id="updates"><strong>F) Updates</strong> - <a href="#toc">top</a></h3>
+     
+      <h3><strong>V. 2.1 (8 August 2022</strong>)</h3>
+    <ul>
+          <li>Removed "get_magic_quotes_gpc" php function deprecated for latest PHP versions</li>
+      </ul>
+      <pre>How to update:
+
+Update the following files: assets/contact.php + review.php or delete the following lines of code 
+
+if(get_magic_quotes_gpc()) {
+	$message_contact = stripslashes($message_contact);
+}            </pre>
+      
+     <h3><strong>V. 2.0 (14 January 2022</strong>)</h3>
+    <ul>
+          <li>Updated Documentation</li>
+      </ul>
+
+     
+     <h3><strong>V. 1.9 (18 February 2021</strong>)</h3>
+    <ul>
+          <li>Updated Documentation</li>
+      </ul>
+
+
+      <h3><strong>V.1.8 (14 December 2018)</strong></h3>
+      <ul>
+        <li>Removed @import </li>
+        <li>Removed conditional css comments for IE 8/9 in the html pages</li>
+      </ul>
+        <pre>How to update from previous version:
+
+in the head of every page please replace this line:
+
+&lt;!-- BASE CSS --&gt;<br>&lt;link href=&quot;css/base.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+with
+&lt;!-- BASE CSS --&gt;<br>    &lt;link href=&quot;css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;<br>    &lt;link href=&quot;css/animate.min.css&quot; rel=&quot;stylesheet&quot;&gt;<br>    &lt;link href=&quot;css/style.css&quot; rel=&quot;stylesheet&quot;&gt;<br>    &lt;link href=&quot;css/menu.css&quot; rel=&quot;stylesheet&quot;&gt;<br>    &lt;link href=&quot;css/responsive.css&quot; rel=&quot;stylesheet&quot;&gt;<br>    &lt;link href=&quot;css/fontello/css/icon_set_1.css&quot; rel=&quot;stylesheet&quot;&gt;<br>    &lt;link href=&quot;css/fontello/css/icon_set_2.css&quot; rel=&quot;stylesheet&quot;&gt;<br>    &lt;link href=&quot;css/fontello/css/fontello.css&quot; rel=&quot;stylesheet&quot;&gt;<br>    &lt;link href=&quot;css/magnific-popup.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+Same changes for site launch page.</pre>
+  <h3><strong>V.1.7 (28 Feb 2017)</strong></h3>
+        <ul>
+        <li>Fixed an issue related to the Coming soon page (files to update: site_launch/style.css, site_launch/index.html, site_launch/assets/newsletter.php)</li>
+        </ul>
+       <h3><strong>V.1.6 (22 Dec 2016)</strong></h3>
+        <ul>
+        <li>Added SMTP authentication version for the php forms</li>
+        </ul>
+       <h3><strong>V.1.5 (26 July 2016)</strong></h3>
+        <ul>
+        <li>Updated documentation on how to fix for possible coming issue related on Google map.</li>
+        </ul>
+      <h3><strong>Version 1.4 26 MARCH 2015</strong></h3>
+      The Jquery Weather plugin stop to works: http://www.zazar.net/developers/jquery/zweatherfeed/ . We've Updated the item with another plugin.
+      <pre>How to update from previous version:
+<br>1) Copy/paste the new js files: js/jquery.simpleWeather.js + js/jquery.simpleWeather.min.js
+2) Replace the css/weather.css with the updated one<br>3) At the bottom of the page replace the old code with the new one:<br><br>&lt;!-- Specific scripts --&gt;   <br>&lt;script src=&quot;js/jquery.simpleWeather.min.js&quot;&gt;&lt;/script&gt; <br>&lt;script&gt;<br>// v3.1.0<br>//Docs at http://simpleweatherjs.com<br>$(document).ready(function() {<br>  $.simpleWeather({<br>    location: 'Marseille, France',<br>    woeid: '',<br>    unit: 'c',<br>    success: function(weather) {<br> html = '&lt;h4&gt;&lt;i class=&quot;weathericon-'+weather.code+'&quot;&gt;&lt;/i&gt; '+weather.temp+'&amp;deg;'+weather.units.temp+'&lt;/h4&gt;';<br>      html += '&lt;ul&gt;&lt;li&gt;'+weather.city+', '+weather.region+'&lt;/li&gt;';<br>      html += '&lt;li class=&quot;currently&quot;&gt;'+weather.currently+'&lt;/li&gt;';<br>      html += '&lt;li&gt;'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'&lt;/li&gt;&lt;/ul&gt;';<br>	  <br>	   for(var i=0;i&lt;weather.forecast.length;i++) {<br>   html += '&lt;span class=&quot;details_forecast&quot;&gt;'+weather.forecast[i].day+': '+weather.forecast[i].high+'&lt;/span&gt;';<br>      }<br>  <br>      $(&quot;#weather&quot;).html(html);<br>    },<br>    error: function(error) {<br>      $(&quot;#weather&quot;).html('&lt;p&gt;'+error+'&lt;/p&gt;');<br>    }<br>  });<br>});<br>&lt;/script&gt;
+
+<strong>IMPORTANT: the weather icon font is not visible on your local computer. To view it upload your site to your host/server.</strong>
+      </pre>
+      <h3><strong>Version 1.3 10 NOVEMBER 2015</strong></h3>
+        - Fixed Child field in check avail form(index_3.html - room_booking.html)
+        <pre>How to change from previuos version: <br>  <p>open assets/validate.js and add children: $('#children').val(), like the example below:</p><p>$.post(action, {
+          check_in: $('#check_in').val(),
+          check_out: $('#check_out').val(),
+          adults: $('#adults').val(),
+          children: $('#children').val(),
+          room_type: $('#room_type').val(),
+          name_booking: $('#name_booking').val(),
+          email_booking: $('#email_booking').val()
+          },    </p></pre>
+      <h3><strong>Version 1.2 25 OCTOBER 2015</strong></h3>
+        - Add language support for weather forecast script in about.html
+      <pre>How to change from previuos version: <br>
+1) Update this js file jquery.zweatherfeed.js. <br>
+2) At the bottom of the html page replace these lines
+&lt;script&gt;<br>$('#weather').weatherfeed(['FRXX0059'], {<br>		forecast: true<br>	});<br>&lt;/script&gt;
+
+with
+&lt;script&gt;<br>$('#weather').weatherfeed(['FRXX0059'], {<br>		language : 'en',<br>		forecast: true<br>	});<br>&lt;/script&gt;
+
+NOTE: if you need to translate with your own language please refer to this file jquery.zweatherfeed.js. 
+English and French translation are already done.       </pre>       
+      <h3><strong>Version 1.1 16 JULY 2015</strong></h3>
+        - Fixed an issue related to tablets that affect the input name and email (on tablet they are not clickable) in index_3.html and room_booking.html
+        <pre>
+How to fix it<br>Add a col-sm-12 to the button at the end of the form
+
+WRONG
+&lt;div class=&quot;col-md-12&quot;&gt;<br>&lt;div class=&quot;form-group&quot;&gt;<br>&lt;input type=&quot;submit&quot; value=&quot;Book now&quot; class=&quot;btn_full&quot; id=&quot;submit-booking&quot;&gt;<br>&lt;/div&gt;<br>&lt;/div&gt;
+
+CORRECT<br>&lt;div class=&quot;col-md-12 <strong>col-sm-12</strong>&quot;&gt;<br>&lt;div class=&quot;form-group&quot;&gt;<br>&lt;input type=&quot;submit&quot; value=&quot;Book now&quot; class=&quot;btn_full&quot; id=&quot;submit-booking&quot;&gt;<br>&lt;/div&gt;<br>&lt;/div&gt;<br></pre>
+      <hr>
+<h3>Maybe you are interested in</h3>
+<p><a href="https://themeforest.net/item/panagea-travel-and-tours-listings-template/21957086?ref=ansonika"><img src="assets/images/01-panagea-tours-hotels-restaurants-listing.jpg" width="590" height="300"></a></p>
+<p><a href="https://themeforest.net/item/albert-hotel-and-bedbreakfast/15870620?ref=ansonika"><img src="assets/images/01-albert-hotel-bed-and-breakfast.jpg" width="590" height="300"></a></p>
+<p><a href="http://themeforest.net/item/citytours-city-tours-tour-tickets-and-guides/10715647?ref=ansonika"><img src="assets/images/01-citytours-travel-tour-template.jpg" width="590" height="300"></a></p>
+<p><a href="https://themeforest.net/item/sparker-directory-and-listings-template/22716006?ref=ansonika"><img src="assets/images/01-sparker-directory-listings-template.jpg" width="590" height="300"></a></p>
+<p><a href="https://themeforest.net/item/travelguide-travel-guides-places-and-directions/17323444?ref=ansonika"><img src="assets/images/01-travelguide-travel-site-template.jpg" width="590" height="300"></a></p>
+<p><a href="https://themeforest.net/item/bestours-tours-excursions-and-travel-multipurpose-template/18956733?ref=ansonika"><img src="assets/images/01-bestours-multipurpose-tours-template.jpg" width="590" height="300"></a></p>
+<p><a href="http://themeforest.net/item/responsive-paradise-hotel/1735945?ref=ansonika"><img src="assets/images/01_Responsive_hotel_site_template.jpg" width="590" height="300"></a></p>
+<p><a href="http://themeforest.net/item/bedbreakfast-responsive-single-page/4832335?ref=ansonika"><img src="assets/images/01-bed-and-breakfast-responsive-singlepage.jpg" width="590" height="300"></a></p>
+<p><strong><br>
+    <img src="assets/images/avatar.jpg" width="80" height="80"><br>
+	  <br>
+    Once again, thank you so much for purchasing this theme. Please take a moment to rate it from your Downloads page.</strong><br> 
+		  
+<h3>Need support?</h3>
+For support contact me using the form on my profile page with subject <strong>[ThemeForest Support]  Template name</strong>, or via support tab on the item page. You will receive an answer within 24-48 hours (working days)  GMT  +1.
+<ul>
+<li>I only provide support for fixing bugs or small issues on my items.</li>
+<li>I don't provide free support for additional custom modifications to the items.</li>
+<li>Please provide your site link, screenshots and other information about your issue.</li>
+<li><a href="http://wiki.envato.com/buying/support-buying/getting-support-modifications-and-upgrades/" rel="nofollow">Read also here</a></li>
+</ul>
+
+<h3>Need customization or availability for freelance projects?</h3>
+Just send an email via profile page form; please don't forget to specify:
+<ul>
+<li>if you are a company, agency or private user</li>
+<li>all the information about your projects, needs, site urls, project sheet, etc..</li>
+<li>from which country you are</li>
+<li>if you have a deadline</li>
+<li>if you have basic knowledge of  HTML , CSS, JS,  PHP</li>
+</ul>
+<p class="append-bottom alt large"><strong>Ansonika</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
